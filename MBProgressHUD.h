@@ -352,6 +352,12 @@ typedef void (^MBProgressHUDCompletionBlock)();
 @property (assign) float margin;
 
 /**
+ * The amount of space between the HUD elements (labels, indicators or custom views).
+ * Defaults to 4.0
+ */
+@property (MB_STRONG) NSNumber *padding;
+
+/**
  * The corner radius for th HUD
  * Defaults to 10.0
  */

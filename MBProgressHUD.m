@@ -209,6 +209,9 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		
 		taskInProgress = NO;
 		rotationTransform = CGAffineTransformIdentity;
+        
+        // Set the default padding
+        self.padding = [NSNumber numberWithFloat:kPadding];
 		
 		[self setupLabels];
 		[self updateIndicators];
@@ -556,16 +559,16 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	totalSize.width = MAX(totalSize.width, labelSize.width);
 	totalSize.height += labelSize.height;
 	if (labelSize.height > 0.f && indicatorF.size.height > 0.f) {
-		totalSize.height += kPadding;
+		totalSize.height += self.padding.floatValue;
 	}
 
-	CGFloat remainingHeight = bounds.size.height - totalSize.height - kPadding - 4 * margin; 
+	CGFloat remainingHeight = bounds.size.height - totalSize.height - self.padding.floatValue - 4 * margin;
 	CGSize maxSize = CGSizeMake(maxWidth, remainingHeight);
 	CGSize detailsLabelSize = MB_MULTILINE_TEXTSIZE(detailsLabel.text, detailsLabel.font, maxSize, detailsLabel.lineBreakMode);
 	totalSize.width = MAX(totalSize.width, detailsLabelSize.width);
 	totalSize.height += detailsLabelSize.height;
 	if (detailsLabelSize.height > 0.f && (indicatorF.size.height > 0.f || labelSize.height > 0.f)) {
-		totalSize.height += kPadding;
+		totalSize.height += self.padding.floatValue;
 	}
 	
 	totalSize.width += 2 * margin;
@@ -580,7 +583,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	yPos += indicatorF.size.height;
 	
 	if (labelSize.height > 0.f && indicatorF.size.height > 0.f) {
-		yPos += kPadding;
+		yPos += self.padding.floatValue;
 	}
 	CGRect labelF;
 	labelF.origin.y = yPos;
@@ -590,7 +593,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	yPos += labelF.size.height;
 	
 	if (detailsLabelSize.height > 0.f && (indicatorF.size.height > 0.f || labelSize.height > 0.f)) {
-		yPos += kPadding;
+		yPos += self.padding.floatValue;
 	}
 	CGRect detailsLabelF;
 	detailsLabelF.origin.y = yPos;
