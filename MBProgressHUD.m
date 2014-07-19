@@ -103,6 +103,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 @synthesize minSize;
 @synthesize square;
 @synthesize margin;
+@synthesize padding;
 @synthesize dimBackground;
 @synthesize graceTime;
 @synthesize minShowTime;
