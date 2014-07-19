@@ -358,6 +358,12 @@ typedef void (^MBProgressHUDCompletionBlock)();
 @property (MB_STRONG) NSNumber *padding;
 
 /**
+ * The amount of space between the view and the text label
+ * Defaults to padding (which defaults to 4.0)
+ */
+@property (MB_STRONG) NSNumber *paddingBetweenViewAndLabel;
+
+/**
  * The corner radius for th HUD
  * Defaults to 10.0
  */

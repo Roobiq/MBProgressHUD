@@ -104,6 +104,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 @synthesize square;
 @synthesize margin;
 @synthesize padding;
+@synthesize paddingBetweenViewAndLabel;
 @synthesize dimBackground;
 @synthesize graceTime;
 @synthesize minShowTime;
@@ -211,8 +212,9 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		taskInProgress = NO;
 		rotationTransform = CGAffineTransformIdentity;
         
-        // Set the default padding
+        // Set the default paddings
         self.padding = [NSNumber numberWithFloat:kPadding];
+        self.paddingBetweenViewAndLabel = self.padding;
 		
 		[self setupLabels];
 		[self updateIndicators];
