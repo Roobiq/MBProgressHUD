@@ -520,8 +520,8 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
         if (customViewWidth &&
             customViewHeight) {
             CGRect frame = self.indicator.frame;
-            frame.size.width = customViewWidth;
-            frame.size.height = customViewHeight;
+            frame.size.width = customViewWidth.floatValue;
+            frame.size.height = customViewHeight.floatValue;
             self.indicator.frame = frame;
         }
 		[self addSubview:indicator];
