@@ -562,7 +562,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	totalSize.width = MAX(totalSize.width, labelSize.width);
 	totalSize.height += labelSize.height;
 	if (labelSize.height > 0.f && indicatorF.size.height > 0.f) {
-		totalSize.height += self.padding.floatValue;
+		totalSize.height += self.paddingBetweenViewAndLabel.floatValue;
 	}
 
 	CGFloat remainingHeight = bounds.size.height - totalSize.height - self.padding.floatValue - 4 * margin;
@@ -586,7 +586,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	yPos += indicatorF.size.height;
 	
 	if (labelSize.height > 0.f && indicatorF.size.height > 0.f) {
-		yPos += self.padding.floatValue;
+		yPos += self.paddingBetweenViewAndLabel.floatValue;
 	}
 	CGRect labelF;
 	labelF.origin.y = yPos;
