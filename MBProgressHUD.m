@@ -111,6 +111,8 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 @synthesize taskInProgress;
 @synthesize removeFromSuperViewOnHide;
 @synthesize customView;
+@synthesize customViewWidth;
+@synthesize customViewHeight;
 @synthesize showStarted;
 @synthesize mode;
 @synthesize labelText;
@@ -239,6 +241,8 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	[minShowTimer release];
 	[showStarted release];
 	[customView release];
+    [customViewWidth release];
+    [customViewHeight release];
 	[labelFont release];
 	[labelColor release];
 	[detailsLabelFont release];
@@ -513,6 +517,13 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		// Update custom view indicator
 		[indicator removeFromSuperview];
 		self.indicator = customView;
+        if (customViewWidth &&
+            customViewHeight) {
+            CGRect frame = self.indicator.frame;
+            frame.size.width = customViewWidth;
+            frame.size.height = customViewHeight;
+            self.indicator.frame = frame;
+        }
 		[self addSubview:indicator];
 	} else if (mode == MBProgressHUDModeText) {
 		[indicator removeFromSuperview];

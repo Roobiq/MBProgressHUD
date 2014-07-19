@@ -296,6 +296,13 @@ typedef void (^MBProgressHUDCompletionBlock)();
  */
 @property (MB_STRONG) UIView *customView;
 
+/**
+ * Custom view sizing. Default is 37 by 37 pixel view
+ * Both height and width need to be set to override default values
+ */
+@property (MB_STRONG) NSNumber *customViewWidth;
+@property (MB_STRONG) NSNumber *customViewHeight;
+
 /** 
  * The HUD delegate object. 
  *
