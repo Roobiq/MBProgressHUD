@@ -380,6 +380,14 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	[NSObject cancelPreviousPerformRequestsWithTarget:self];
 	isFinished = YES;
 	self.alpha = 0.0f;
+    
+    // Reenable the scrollView
+    if ([self.superview isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *superViewScrollView = (UIScrollView *)self.superview;
+        superViewScrollView.scrollEnabled = YES;
+    }
+    
+    
 	if (removeFromSuperViewOnHide) {
 		[self removeFromSuperview];
 	}
